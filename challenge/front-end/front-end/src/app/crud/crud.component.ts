@@ -15,7 +15,7 @@ export class CrudComponent {
   studentForm = new FormGroup({
     name: new FormControl(''),
     address : new FormControl(''),
-    fee : new FormControl
+    fee : new FormControl('')
     
   });
   
@@ -42,7 +42,7 @@ export class CrudComponent {
       "fee" : this.fee
     };
  
-    this.http.post("http://127.0.0.1:8000/users",bodyData).subscribe((resultData: any)=>
+    this.http.post("http://127.0.0.1:8000/user/",bodyData).subscribe((resultData: any)=>
     {
         console.log(resultData);
         alert("Student Registered Successfully");
@@ -53,7 +53,7 @@ export class CrudComponent {
  
   getAllStudent()
   {
-    this.http.get("http://127.0.0.1:8000/users")
+    this.http.get("http://127.0.0.1:8000/user/")
     .subscribe((resultData: any)=>
     {
         console.log(resultData);
@@ -82,7 +82,7 @@ export class CrudComponent {
       "fee" : this.fee
     };
     
-    this.http.put("http://127.0.0.1:8000/users/"+ this.currentStudentID , bodyData).subscribe((resultData: any)=>
+    this.http.put("http://127.0.0.1:8000/user/"+ this.currentStudentID , bodyData).subscribe((resultData: any)=>
     {
         console.log(resultData);
         alert("Student Registered Updateddd")
@@ -96,7 +96,7 @@ export class CrudComponent {
 
   setDelete(data: any)
   {
-    this.http.delete("http://127.0.0.1:8000/users"+ "/"+ data.id).subscribe((resultData: any)=>
+    this.http.delete("http://127.0.0.1:8000/user/"+ "/"+ data.id).subscribe((resultData: any)=>
     {
         console.log(resultData);
         alert("Student Deletedddd")

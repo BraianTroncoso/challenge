@@ -38,12 +38,9 @@
         </thead>
         <tbody>
             @for (StudentItem of StudentArray; track $index) {
-            
-           
             <td>{{StudentItem.name}}</td>
             <td>{{StudentItem.address }}</td>
             <td>{{StudentItem.fee }}</td>
- 
             <td>
                 <button type="button" class="btn btn-success" (click)="setUpdate(StudentItem)">Edit</button>
                 <button type="button" class="btn btn-danger" (click)="setDelete(StudentItem)">Delete</button>
