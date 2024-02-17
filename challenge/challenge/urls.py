@@ -1,9 +1,10 @@
 from django.contrib import admin
-from django.urls import path
 from django.urls import path, include
-from user.urls import urlpatterns_users
+from user import views
+
 
 urlpatterns = [
+    path('users/',views.userApi),
+    path('users/<int:id>',views.userApi),
     path('admin/', admin.site.urls),
-        path('api/', include(urlpatterns_users))
 ]
