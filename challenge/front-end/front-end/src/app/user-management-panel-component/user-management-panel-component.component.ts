@@ -39,29 +39,41 @@ export class UserManagementPanelComponentComponent {
     }
   }
  
-  saveUser(){
+  saveUser() {
+    // Validate the data before sending the request
+    if (!this.first_name || !this.last_name || !this.address || !this.phone) {
+        
+        this._snackBar.open('Please fill out all fields', 'Close', {
+            duration: 3000,
+            horizontalPosition: 'center',
+            verticalPosition: 'top'
+        });
+        return; // Stop execution if there are missing fields
+    }
+
+    // Create the body of data for the request
     let bodyData = {
-      "first_name" : this.first_name,
-      "last_name" : this.last_name,
-      "address" : this.address,
-      "phone" : this.phone
+        "first_name": this.first_name,
+        "last_name": this.last_name,
+        "address": this.address,
+        "phone": this.phone
     };
- 
-    this.http.post("http://127.0.0.1:8000/user",bodyData).subscribe((resultData: any)=>
-    {
+
+    this.http.post("http://127.0.0.1:8000/user", bodyData).subscribe((resultData: any) => {
         console.log(resultData);
         this._snackBar.open('User Registered Successfully', 'Close', {
-          duration: 3000,
-          horizontalPosition: 'center',
-          verticalPosition: 'top'
+            duration: 3000,
+            horizontalPosition: 'center',
+            verticalPosition: 'top'
         });
+        // Clear fields after successful saving
         this.first_name = '';
         this.last_name = '';
         this.address = '';
-        this.phone  = undefined;
-        
+        this.phone = undefined;
     });
-  }
+}
+
   
   updateUser(){
     let bodyData = {
