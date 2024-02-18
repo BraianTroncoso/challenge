@@ -43,6 +43,11 @@ export class CrudComponent {
           horizontalPosition: 'center',
           verticalPosition: 'top'
         });
+        this.first_name = '';
+        this.last_name = '';
+        this.address = '';
+        this.phone  = undefined;
+        
         this.getAllUsers();
     });
   }

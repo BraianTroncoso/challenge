@@ -22,7 +22,7 @@ body {
     justify-content: center;
 }
 .section{
-    background-color: #3D4067;
+    background-color: #97BCD7;
     position: relative;
     overflow: hidden;
     display: flex;
@@ -30,8 +30,7 @@ body {
     flex-direction: column;
 }
 header,
-main,
-footer{
+main{
     display: block;
     position: relative;
     z-index: 1;
@@ -59,9 +58,10 @@ main{
         padding: 0 24px;
     }
 }
-footer{
+
+.header{
     width: 100%;
-    background-color: #524F81;
+    background-color: #75A4C5;
     padding: 16px;
     align-self: center;
     text-align: center;
@@ -75,6 +75,8 @@ footer{
         }
     }
 }
+
+
 form{
     height: 100%;
     display: flex;
@@ -93,15 +95,15 @@ small{
 }
 .form-item{
     input[type="text"],
-    input[type="number"],
-    input[type="email"]{
+    input[type="number"]
+    {
         display: block;
-        color: #E2E3E8;
+        color: black;
         font-size: 16px;
         width: 100%;
         background-color: transparent;
         border: none;
-        border-bottom: 1px solid #75759E;
+        border-bottom: 1px solid #1B4769;
         padding: 8px 0;
         appearance: none;
         outline: none;
@@ -179,14 +181,15 @@ small{
     font-weight: 700;
     letter-spacing: 1px;
     padding: 8px 48px;
+    background-color: #75add4;
     margin-top: 32px;
-    border: 2px solid #75759E;
+    border: 2px solid #1B4769;
     border-radius: 20px;
     cursor: pointer;
     transition: all ease .2s;
     &:hover{
-        background-color: #EDA261;
-        border: 2px solid #EDA261;
+        background-color: #507FA9;
+        border: 2px solid #1B4769;
     }
 }
 .submitDashboard{

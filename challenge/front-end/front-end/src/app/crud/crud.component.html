@@ -1,5 +1,5 @@
 
-    <div class="row">
+    <div class="row w-50 mx-auto">
 
       <section class="section">
 
@@ -28,7 +28,7 @@
                       <input type="text" [(ngModel)]="phone" [ngModelOptions]="{standalone: true}" class="form-control" id="phone" name="phone" placeholder="Enter your phone">
             </div>
 
-            <div class="form-item">
+            <div class="form-item mb-4">
                 <button type="submit" class="submit" (click)="saveUser()" >Save</button> &nbsp;
                 <button type="submit" class="submit" (click)="updateUser()" >Update</button>
             </div>
@@ -36,23 +36,22 @@
           </form>
 
         </main>
+ 
+        <!-- <i class="wave"></i> -->
+      </section>
 
-        <footer>
+    </div>
+
+    <div class="container mt-4 mx-auto" >
+
+       <div class="header">
           <ng-container *ngIf="userArray.length > 0; else noCustomers">
             <h1>ONLINE CUSTOMERS</h1>
           </ng-container>
           <ng-template #noCustomers>
             <h1>NO CUSTOMERS ONLINE</h1>
           </ng-template>
-        </footer>
-
-        <i class="wave"></i>
-
-      </section>
-
-    </div>
-
-    <div class="container mt-4 mx-auto" >
+        </div>
 
     <table class="table">
 
