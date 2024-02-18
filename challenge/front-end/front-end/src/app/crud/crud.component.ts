@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-crud',
@@ -20,16 +20,16 @@ export class CrudComponent {
   editingMode: number = 0;
   currentUserId = "";
  
-  constructor(private http: HttpClient, private _snackBar: MatSnackBar, private route: ActivatedRoute)
+  constructor(private http: HttpClient, private _snackBar: MatSnackBar, private router: Router)
   {
 
   }
   
   ngOnInit() {
-    // Recupera los datos del usuario de los parámetros de la ruta
+    // Retrieves user data from the route parameters
     const userData = history.state.data;
     if(userData){
-      // Asigna los datos del usuario a las variables del componente
+      // Assigns the user data to the component variables
       this.first_name = userData.first_name;
       this.last_name = userData.last_name;
       this.address = userData.address;
@@ -37,7 +37,7 @@ export class CrudComponent {
       this.currentUserId = userData.id;
       this.editingMode = 1;
     }else{
-      console.log('ERROR AL RECIBIR DATOS')
+      console.log('ERROR RECEIVING DATA')
     }
   }
  
@@ -87,6 +87,7 @@ export class CrudComponent {
         this.last_name = '';
         this.address = '';
         this.phone  = undefined;
+        this.router.navigate(['/users'])
     });
   }
 
