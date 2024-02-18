@@ -38,7 +38,12 @@
         </main>
 
         <footer>
-          <h1>ONLINE CUSTOMERS</h1>
+          <ng-container *ngIf="userArray.length > 0; else noCustomers">
+            <h1>ONLINE CUSTOMERS</h1>
+          </ng-container>
+          <ng-template #noCustomers>
+            <h1>NO CUSTOMERS ONLINE</h1>
+          </ng-template>
         </footer>
 
         <i class="wave"></i>

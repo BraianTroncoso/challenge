@@ -15,7 +15,8 @@ export class CrudComponent {
   first_name: string ="";
   last_name: string ="";
   address: string ="";
-  phone: Number = 0;
+  phone: number | undefined = undefined;
+
  
   currentUserId = "";
  
@@ -76,7 +77,7 @@ export class CrudComponent {
         this.first_name = '';
         this.last_name = '';
         this.address = '';
-        this.phone  = 0;
+        this.phone  = undefined;
         this.getAllUsers();
     });
   }
