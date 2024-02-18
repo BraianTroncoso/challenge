@@ -15,7 +15,7 @@ export class CrudComponent {
   first_name: string ="";
   last_name: string ="";
   address: string ="";
-  phone: Number =0;
+  phone: Number = 0;
  
   currentUserId = "";
  

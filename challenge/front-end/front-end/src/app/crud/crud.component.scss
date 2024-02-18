@@ -106,13 +106,10 @@ small{
         appearance: none;
         outline: none;
     }
-    small{
-        /*letter-spacing: 1px;*/
-    }
-    i{
-        font-size: 12px;
-        color: red;
-    }
+    // small{
+    //     /*letter-spacing: 1px;*/
+    // }
+
 }
 .box-item{
     height: 60px;
@@ -191,6 +188,17 @@ small{
         background-color: #EDA261;
         border: 2px solid #EDA261;
     }
+}
+.submitDashboard{
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 8px 48px;
+    border: 2px solid #75759E;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all ease .2s;
 }
 .wave{
   position: absolute;

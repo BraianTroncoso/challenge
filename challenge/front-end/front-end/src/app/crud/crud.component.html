@@ -1,39 +1,58 @@
-<div class="container mt-4" >
-    <h1>REGISTER A NEW CUSTOMER</h1>
-    <div class="card">
-           
-<form>
-   
-    <div class="form-group">
-      <label >First Name</label>
-      <input type="text"  [(ngModel)]="first_name" [ngModelOptions]="{standalone: true}"   class="form-control" id="first_name" name="first_name" placeholder="Enter your first name">
+
+    <div class="row">
+
+      <section class="section">
+
+        <header>
+          <h3>Register a new customer</h3>
+          <h4>Please fill your information bellow</h4>
+        </header>
+
+        <main>
+
+          <form>
+
+            <div class="form-item box-item form-group">
+              <input type="text"  [(ngModel)]="first_name" [ngModelOptions]="{standalone: true}"   class="form-control" id="first_name" name="first_name" placeholder="Enter your first name">
+            </div>
+
+             <div class="form-item box-item form-group">
+                    <input type="text"  [(ngModel)]="last_name" [ngModelOptions]="{standalone: true}"   class="form-control" id="last_name" name="last_name" placeholder="Enter your last name">
+            </div>
+
+            <div class="form-item box-item form-group">
+                <input type="text" [(ngModel)]="address" [ngModelOptions]="{standalone: true}" class="form-control" id="studentaddress" name="studentaddress" placeholder="Enter your address">
+            </div>
+
+            <div class="form-item box-item form-group">
+                      <input type="text" [(ngModel)]="phone" [ngModelOptions]="{standalone: true}" class="form-control" id="phone" name="phone" placeholder="Enter your phone">
+            </div>
+
+            <div class="form-item">
+                <button type="submit" class="submit" (click)="saveUser()" >Save</button> &nbsp;
+                <button type="submit" class="submit" (click)="updateUser()" >Update</button>
+            </div>
+
+          </form>
+
+        </main>
+
+        <footer>
+          <h1>ONLINE CUSTOMERS</h1>
+        </footer>
+
+        <i class="wave"></i>
+
+      </section>
+
     </div>
 
-    <div class="form-group">
-      <label >Last Name</label>
-      <input type="text"  [(ngModel)]="last_name" [ngModelOptions]="{standalone: true}"   class="form-control" id="last_name" name="last_name" placeholder="Enter your last name">
-    </div>
-    
-    <div class="form-group">
-        <label >Address</label>
-        <input type="text" [(ngModel)]="address" [ngModelOptions]="{standalone: true}" class="form-control" id="studentaddress" name="studentaddress" placeholder="Enter your address">
-      </div>
+    <div class="container mt-4 mx-auto" >
 
-      <div class="form-group">
-        <label >Phone</label>
-        <input type="text" [(ngModel)]="phone" [ngModelOptions]="{standalone: true}" class="form-control" id="phone" name="phone" placeholder="Enter your phone">
-      </div>
-
-      <button type="submit" class="btn btn-primary mt-4" (click)="saveUser()" >Save</button> &nbsp;
-      <button type="submit" class="btn btn-warning mt-4" (click)="updateUser()" >Update</button>
-  </form>
-</div>
-</div>
-
-<div>
-    <div class="container mt-4" >
     <table class="table">
+
         <thead>     
+
         <tr>
             <th scope="col">First Name</th>
             <th scope="col">Last Name</th>
@@ -41,8 +60,11 @@
             <th scope="col">Phone</th>
             <th scope="col">Option</th>
           </tr>
+
         </thead>
+
         <tbody>
+
             <tr *ngFor="let user of userArray">
            
             <td>{{ user.first_name }}</td>
@@ -51,54 +73,14 @@
             <td>{{ user.phone }}</td>
  
             <td>
-                <button type="button" class="btn btn-success" (click)="setUpdate(user)">Edit</button>
-                <button type="button" class="btn btn-danger" (click)="deleteUser(user)">Delete</button>
+                <button type="button" class="btn btn-success submitDashboard" (click)="setUpdate(user)">Edit</button>
+                <button type="button" class="btn btn-danger submitDashboard" (click)="deleteUser(user)">Delete</button>
             </td>
+
           </tr>
           
         </tbody>
+
       </table>
- 
- 
-    </div>
-    <div class="row">
-      <section class="section">
-        <header>
-          <h3>Register a new customer</h3>
-          <h4>Please fill your information bellow</h4>
-        </header>
-        <main>
-          <form>
-
-            <div class="form-item box-item">
-              <input type="text" name="name" placeholder="Name" data-required>
-              <small class="errorReq"><i class="fa fa-asterisk" aria-hidden="true"></i> required field</small>
-            </div>
-
-             <div class="form-item box-item">
-              <input type="text" name="name" placeholder="Name" data-required>
-              <small class="errorReq"><i class="fa fa-asterisk" aria-hidden="true"></i> required field</small>
-            </div>
-
-            <div class="form-item box-item">
-              <input type="text" name="address" placeholder="Address" data-required>
-              <small class="errorReq"><i class="fa fa-asterisk" aria-hidden="true"></i> required field</small>
-            </div>
-            <div class="form-item box-item">
-              <input type="text" name="phone" placeholder="Phone" data-required data-number data-count="10">
-              <small class="errorReq"><i class="fa fa-asterisk" aria-hidden="true"></i> required field</small>
-              <small class="errorNum"><i class="fa fa-asterisk" aria-hidden="true"></i> must be a number</small>
-              <small class="errorChar"><i class="fa fa-asterisk" aria-hidden="true"></i> must be 10 digits</small>
-            </div>
-            <div class="form-item">
-              <span id="submit" class="submit">Save</span>
-              <span id="submit" class="submit">Update</span>
-            </div>
-          </form>
-        </main>
-        <footer>
-          <h1>ONLINE CUSTOMERS</h1>
-        </footer>
-        <i class="wave"></i>
-      </section>
+      
     </div>
