@@ -10,88 +10,85 @@ import { BehaviorSubject } from 'rxjs';
 
 
 export class CrudComponent {
-  StudentArray : any[] = [];
+  userArray : any[] = [];
  
-  name: string ="";
+  firstName: string ="";
+  lastName: string ="";
   address: string ="";
-  fee: Number =0;
+  phone: Number =0;
  
-  currentStudentID = "";
+  currentUserId = "";
  
   constructor(private http: HttpClient )
   {
-    this.getAllStudent();
- 
+    this.getAllUsers();
+
   }
  
-  saveRecords()
-  {
-  
+  saveUser(){
     let bodyData = {
-      "name" : this.name,
+      "firstName" : this.firstName,
+      "lastName" : this.firstName,
       "address" : this.address,
-      "fee" : this.fee
+      "phone" : this.phone
     };
  
-    this.http.post("http://127.0.0.1:8000/student",bodyData).subscribe((resultData: any)=>
+    this.http.post("http://127.0.0.1:8000/user",bodyData).subscribe((resultData: any)=>
     {
         console.log(resultData);
-        alert("Student Registered Successfully");
-        this.getAllStudent();
+        alert("User Registered Successfully");
+        this.getAllUsers();
     });
   }
  
- 
-  getAllStudent()
-  {
-    this.http.get("http://127.0.0.1:8000/student")
+  getAllUsers(){
+    this.http.get("http://127.0.0.1:8000/user")
     .subscribe((resultData: any)=>
     {
         console.log(resultData);
-        this.StudentArray = resultData;
+        this.userArray = resultData;
     });
   }
  
  
-  setUpdate(data: any)
-  {
-   this.name = data.name;
+  setUpdate(data: any){
+   this.firstName = data.firstName;
+   this.lastName = data.lastName;
    this.address = data.address;
-   this.fee = data.fee;
-   this.currentStudentID = data.id;
-   
+   this.phone = data.phone;
+   this.currentUserId = data.id;
   }
  
  
  
-  UpdateRecords()
-  {
+  updateUser(){
     let bodyData = 
     {
-      "name" : this.name,
+      "firstName" : this.firstName,
+      "lastName" : this.firstName,
       "address" : this.address,
-      "fee" : this.fee
+      "phone" : this.phone
     };
     
-    this.http.put("http://127.0.0.1:8000/student/"+ this.currentStudentID , bodyData).subscribe((resultData: any)=>
+    this.http.put("http://127.0.0.1:8000/user/"+ this.currentUserId , bodyData).subscribe((resultData: any)=>
     {
         console.log(resultData);
-        alert("Student Registered Updateddd")
-        this.name = '';
+        alert("User Registered Updateddd")
+        this.firstName = '';
+        this.lastName = '';
         this.address = '';
-        this.fee  = 0;
-        this.getAllStudent();
+        this.phone  = 0;
+        this.getAllUsers();
     });
   }
 
 
-  setDelete(data: any)
-  {
-    this.http.delete("http://127.0.0.1:8000/student"+ "/"+ data.id).subscribe((resultData: any)=>
+  deleteUser(data: any){
+    this.http.delete("http://127.0.0.1:8000/user"+ "/"+ data.id).subscribe((resultData: any)=>
     {
         console.log(resultData);
-        alert("Student Deletedddd")
-        this.getAllStudent();
+        alert("User Deleted")
+        this.getAllUsers();
     });
  
   }
