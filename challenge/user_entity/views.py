@@ -5,7 +5,8 @@ from user_entity.serializer import UserSerializer
 from user_entity.models import UserEntity
 
 @csrf_exempt
-def studentApi(request,id=0):
+def userApi(request,id=0):
+    
     if request.method=='GET':
         user_entity = UserEntity.objects.all()
         user_serializer=UserSerializer(user_entity,many=True)
