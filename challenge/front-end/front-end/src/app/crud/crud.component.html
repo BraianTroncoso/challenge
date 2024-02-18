@@ -29,16 +29,16 @@
             </div>
 
             <div class="form-item mb-4">
-                <button type="submit" class="submit" (click)="saveUser()" *ngIf="editingMode===0">Save</button> &nbsp;
-                <button type="submit" class="submit" (click)="updateUser()" *ngIf="editingMode===1">Update</button>
+                <button type="submit" class="btn btn-success submitDashboard" (click)="saveUser()" *ngIf="editingMode===0">Save</button> &nbsp;
+                <button type="submit" class="btn btn-success submitDashboard" (click)="updateUser()" *ngIf="editingMode===1">Update</button>
             </div>
 
           </form>
 
         </main>
-        <button type="button" class="btn btn-success" routerLink="/users"> <i class="fas fa-plus"></i> Return to users</button>
+        <button type="button" class="btn btn-primary" routerLink="/users"> <i class="fas fa-plus"></i> Return to users</button>
  
-        <!-- <i class="wave"></i> -->
+        <i class="wave"></i>
       </section>
 
     </div>
