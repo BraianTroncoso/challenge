@@ -32,14 +32,13 @@
 
 <div>
     <div class="container mt-4" >
-        <h1>ONLINE CUSTOMERS</h1>
     <table class="table">
         <thead>     
         <tr>
-            <th scope="col">FIRST NAME</th>
-            <th scope="col">LAST NAME</th>
+            <th scope="col">First Name</th>
+            <th scope="col">Last Name</th>
             <th scope="col">Address</th>
-            <th scope="col">PHONE</th>
+            <th scope="col">Phone</th>
             <th scope="col">Option</th>
           </tr>
         </thead>
@@ -61,4 +60,45 @@
       </table>
  
  
+    </div>
+    <div class="row">
+      <section class="section">
+        <header>
+          <h3>Register a new customer</h3>
+          <h4>Please fill your information bellow</h4>
+        </header>
+        <main>
+          <form>
+
+            <div class="form-item box-item">
+              <input type="text" name="name" placeholder="Name" data-required>
+              <small class="errorReq"><i class="fa fa-asterisk" aria-hidden="true"></i> required field</small>
+            </div>
+
+             <div class="form-item box-item">
+              <input type="text" name="name" placeholder="Name" data-required>
+              <small class="errorReq"><i class="fa fa-asterisk" aria-hidden="true"></i> required field</small>
+            </div>
+
+            <div class="form-item box-item">
+              <input type="text" name="address" placeholder="Address" data-required>
+              <small class="errorReq"><i class="fa fa-asterisk" aria-hidden="true"></i> required field</small>
+            </div>
+            <div class="form-item box-item">
+              <input type="text" name="phone" placeholder="Phone" data-required data-number data-count="10">
+              <small class="errorReq"><i class="fa fa-asterisk" aria-hidden="true"></i> required field</small>
+              <small class="errorNum"><i class="fa fa-asterisk" aria-hidden="true"></i> must be a number</small>
+              <small class="errorChar"><i class="fa fa-asterisk" aria-hidden="true"></i> must be 10 digits</small>
+            </div>
+            <div class="form-item">
+              <span id="submit" class="submit">Save</span>
+              <span id="submit" class="submit">Update</span>
+            </div>
+          </form>
+        </main>
+        <footer>
+          <h1>ONLINE CUSTOMERS</h1>
+        </footer>
+        <i class="wave"></i>
+      </section>
     </div>

@@ -72,7 +72,7 @@ export class CrudComponent {
     this.http.put("http://127.0.0.1:8000/user/"+ this.currentUserId , bodyData).subscribe((resultData: any)=>
     {
         console.log(resultData);
-        alert("User Registered Updateddd")
+        alert("User Registered Updated")
         this.first_name = '';
         this.last_name = '';
         this.address = '';
