@@ -1,9 +1,21 @@
+# from django.contrib import admin
+# from django.urls import path
+# from user import views
+
+# urlpatterns = [
+#     path('user', views.userApi),
+#     path('user/<int:id>/', views.userApi),
+#     path('admin/', admin.site.urls),
+# ]
+
 from django.contrib import admin
 from django.urls import path
-from user import views
+from django.conf.urls import url
+from StudentApp import views
 
 urlpatterns = [
-    path('user', views.userApi),
-    path('user/<int:id>/', views.userApi),
+    url(r'^student$',views.studentApi),
+    url(r'^student$',views.studentApi),
+    url(r'^student/([0-9]+)$',views.studentApi),
     path('admin/', admin.site.urls),
 ]
