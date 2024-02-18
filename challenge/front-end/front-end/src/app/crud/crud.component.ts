@@ -1,22 +1,15 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-crud',
-  standalone: true,
-  imports: [HttpClientModule],
   templateUrl: './crud.component.html',
-  styleUrl: './crud.component.css'
+  styleUrl: './crud.component.scss'
 })
+
+
 export class CrudComponent {
-  studentForm = new FormGroup({
-    name: new FormControl('', [Validators.required]),
-    address: new FormControl('', [Validators.required]),
-    fee: new FormControl('', [Validators.required, Validators.pattern(/^\d+$/)])
-  });
-  
   StudentArray : any[] = [];
  
   name: string ="";
@@ -40,7 +33,7 @@ export class CrudComponent {
       "fee" : this.fee
     };
  
-    this.http.post("http://127.0.0.1:8000/user",bodyData).subscribe((resultData: any)=>
+    this.http.post("http://127.0.0.1:8000/student",bodyData).subscribe((resultData: any)=>
     {
         console.log(resultData);
         alert("Student Registered Successfully");
@@ -51,7 +44,7 @@ export class CrudComponent {
  
   getAllStudent()
   {
-    this.http.get("http://127.0.0.1:8000/user")
+    this.http.get("http://127.0.0.1:8000/student")
     .subscribe((resultData: any)=>
     {
         console.log(resultData);
@@ -80,7 +73,7 @@ export class CrudComponent {
       "fee" : this.fee
     };
     
-    this.http.put("http://127.0.0.1:8000/user/"+ this.currentStudentID , bodyData).subscribe((resultData: any)=>
+    this.http.put("http://127.0.0.1:8000/student/"+ this.currentStudentID , bodyData).subscribe((resultData: any)=>
     {
         console.log(resultData);
         alert("Student Registered Updateddd")
@@ -94,7 +87,7 @@ export class CrudComponent {
 
   setDelete(data: any)
   {
-    this.http.delete("http://127.0.0.1:8000/user"+ "/"+ data.id).subscribe((resultData: any)=>
+    this.http.delete("http://127.0.0.1:8000/student"+ "/"+ data.id).subscribe((resultData: any)=>
     {
         console.log(resultData);
         alert("Student Deletedddd")
