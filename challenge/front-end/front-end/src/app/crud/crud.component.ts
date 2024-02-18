@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-crud',
@@ -20,7 +21,7 @@ export class CrudComponent {
  
   currentUserId = "";
  
-  constructor(private http: HttpClient )
+  constructor(private http: HttpClient, private _snackBar: MatSnackBar)
   {
     this.getAllUsers();
 
@@ -37,7 +38,11 @@ export class CrudComponent {
     this.http.post("http://127.0.0.1:8000/user",bodyData).subscribe((resultData: any)=>
     {
         console.log(resultData);
-        alert("User Registered Successfully");
+        this._snackBar.open('User Registered Successfully', 'Close', {
+          duration: 3000,
+          horizontalPosition: 'center',
+          verticalPosition: 'top'
+        });
         this.getAllUsers();
     });
   }
@@ -73,7 +78,12 @@ export class CrudComponent {
     this.http.put("http://127.0.0.1:8000/user/"+ this.currentUserId , bodyData).subscribe((resultData: any)=>
     {
         console.log(resultData);
-        alert("User Registered Updated")
+        this._snackBar.open('User Updated Successfully', 'Close', {
+          duration: 3000,
+          horizontalPosition: 'center',
+          verticalPosition: 'top'
+        });
+
         this.first_name = '';
         this.last_name = '';
         this.address = '';
@@ -87,7 +97,11 @@ export class CrudComponent {
     this.http.delete("http://127.0.0.1:8000/user"+ "/"+ data.id).subscribe((resultData: any)=>
     {
         console.log(resultData);
-        alert("User Deleted")
+        this._snackBar.open('User Deleted Successfully', 'Close', {
+          duration: 3000,
+          horizontalPosition: 'center',
+          verticalPosition: 'top'
+        });
         this.getAllUsers();
     });
  
