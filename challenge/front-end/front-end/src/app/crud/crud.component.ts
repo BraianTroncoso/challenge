@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-crud',
@@ -11,12 +11,10 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrl: './crud.component.css'
 })
 export class CrudComponent {
-
   studentForm = new FormGroup({
-    name: new FormControl(''),
-    address : new FormControl(''),
-    fee : new FormControl('')
-    
+    name: new FormControl('', [Validators.required]),
+    address: new FormControl('', [Validators.required]),
+    fee: new FormControl('', [Validators.required, Validators.pattern(/^\d+$/)])
   });
   
   StudentArray : any[] = [];
@@ -42,7 +40,7 @@ export class CrudComponent {
       "fee" : this.fee
     };
  
-    this.http.post("http://127.0.0.1:8000/user/",bodyData).subscribe((resultData: any)=>
+    this.http.post("http://127.0.0.1:8000/user",bodyData).subscribe((resultData: any)=>
     {
         console.log(resultData);
         alert("Student Registered Successfully");
@@ -53,7 +51,7 @@ export class CrudComponent {
  
   getAllStudent()
   {
-    this.http.get("http://127.0.0.1:8000/user/")
+    this.http.get("http://127.0.0.1:8000/user")
     .subscribe((resultData: any)=>
     {
         console.log(resultData);
@@ -96,7 +94,7 @@ export class CrudComponent {
 
   setDelete(data: any)
   {
-    this.http.delete("http://127.0.0.1:8000/user/"+ "/"+ data.id).subscribe((resultData: any)=>
+    this.http.delete("http://127.0.0.1:8000/user"+ "/"+ data.id).subscribe((resultData: any)=>
     {
         console.log(resultData);
         alert("Student Deletedddd")
