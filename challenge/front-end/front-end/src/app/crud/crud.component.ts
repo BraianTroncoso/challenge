@@ -12,8 +12,8 @@ import { BehaviorSubject } from 'rxjs';
 export class CrudComponent {
   userArray : any[] = [];
  
-  firstName: string ="";
-  lastName: string ="";
+  first_name: string ="";
+  last_name: string ="";
   address: string ="";
   phone: Number =0;
  
@@ -27,8 +27,8 @@ export class CrudComponent {
  
   saveUser(){
     let bodyData = {
-      "firstName" : this.firstName,
-      "lastName" : this.firstName,
+      "first_name" : this.first_name,
+      "last_name" : this.last_name,
       "address" : this.address,
       "phone" : this.phone
     };
@@ -52,8 +52,8 @@ export class CrudComponent {
  
  
   setUpdate(data: any){
-   this.firstName = data.firstName;
-   this.lastName = data.lastName;
+   this.first_name = data.first_name;
+   this.last_name = data.last_name;
    this.address = data.address;
    this.phone = data.phone;
    this.currentUserId = data.id;
@@ -62,10 +62,9 @@ export class CrudComponent {
  
  
   updateUser(){
-    let bodyData = 
-    {
-      "firstName" : this.firstName,
-      "lastName" : this.firstName,
+    let bodyData = {
+      "first_name" : this.first_name,
+      "last_name" : this.last_name,
       "address" : this.address,
       "phone" : this.phone
     };
@@ -74,8 +73,8 @@ export class CrudComponent {
     {
         console.log(resultData);
         alert("User Registered Updateddd")
-        this.firstName = '';
-        this.lastName = '';
+        this.first_name = '';
+        this.last_name = '';
         this.address = '';
         this.phone  = 0;
         this.getAllUsers();

@@ -6,12 +6,12 @@
    
     <div class="form-group">
       <label >First Name</label>
-      <input type="text"  [(ngModel)]="firstName" [ngModelOptions]="{standalone: true}"   class="form-control" id="firstName" name="firstName" placeholder="Enter your first name">
+      <input type="text"  [(ngModel)]="first_name" [ngModelOptions]="{standalone: true}"   class="form-control" id="first_name" name="first_name" placeholder="Enter your first name">
     </div>
 
     <div class="form-group">
       <label >Last Name</label>
-      <input type="text"  [(ngModel)]="lastName" [ngModelOptions]="{standalone: true}"   class="form-control" id="lastName" name="lastName" placeholder="Enter your last name">
+      <input type="text"  [(ngModel)]="last_name" [ngModelOptions]="{standalone: true}"   class="form-control" id="last_name" name="last_name" placeholder="Enter your last name">
     </div>
     
     <div class="form-group">
@@ -46,8 +46,8 @@
         <tbody>
             <tr *ngFor="let user of userArray">
            
-            <td>{{ user.firstName }}</td>
-            <td>{{ user.lastName }}</td>
+            <td>{{ user.first_name }}</td>
+            <td>{{ user.last_name }}</td>
             <td>{{ user.address }}</td>
             <td>{{ user.phone }}</td>
  
