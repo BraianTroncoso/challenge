@@ -1,0 +1,46 @@
+<div class="container mt-4 mx-auto" >
+    <div class="header">
+       <ng-container *ngIf="userArray.length > 0; else noCustomers">
+         <h1>ONLINE CUSTOMERS</h1>
+       </ng-container>
+       <ng-template #noCustomers>
+         <h1>NO CUSTOMERS ONLINE</h1>
+       </ng-template>
+       <button type="button" class="btn btn-success submitDashboard mov" routerLink="/add-user"> <i class="fas fa-plus"></i> Add Users</button>
+      </div>
+
+ <table class="table">
+
+     <thead>     
+
+     <tr>
+         <th scope="col">First Name</th>
+         <th scope="col">Last Name</th>
+         <th scope="col">Address</th>
+         <th scope="col">Phone</th>
+         <th scope="col">Option</th>
+       </tr>
+
+     </thead>
+
+     <tbody>
+
+         <tr *ngFor="let user of userArray">
+        
+         <td>{{ user.first_name }}</td>
+         <td>{{ user.last_name }}</td>
+         <td>{{ user.address }}</td>
+         <td>{{ user.phone }}</td>
+
+         <td>
+             <button type="button" class="btn btn-warning submitDashboard" (click)="setUpdate(user)">Edit</button>
+             <button type="button" class="btn btn-danger submitDashboard" (click)="deleteUser(user)">Delete</button>         
+         </td>
+
+       </tr>
+       
+     </tbody>
+
+   </table>
+   
+ </div>
