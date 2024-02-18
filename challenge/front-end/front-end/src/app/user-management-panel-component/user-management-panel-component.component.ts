@@ -4,13 +4,11 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-crud',
-  templateUrl: './crud.component.html',
-  styleUrl: './crud.component.scss'
+  selector: 'app-user-management-panel-component',
+  templateUrl: './user-management-panel-component.component.html',
+  styleUrl: './user-management-panel-component.component.scss'
 })
-
-
-export class CrudComponent {
+export class UserManagementPanelComponentComponent {
   userArray : any[] = [];
  
   first_name: string ="";
@@ -64,8 +62,7 @@ export class CrudComponent {
         
     });
   }
-
- 
+  
   updateUser(){
     let bodyData = {
       "first_name" : this.first_name,

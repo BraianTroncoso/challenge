@@ -1,0 +1,46 @@
+<div class="row w-50 mx-auto">
+
+    <section class="section">
+
+      <header>
+        <h3>Register a new customer</h3>
+        <h4>Please fill your information bellow</h4>
+        <!-- registered-users-panel.component.html -->
+      </header>
+
+      <main>
+
+        <form>
+
+          <div class="form-item box-item form-group">
+            <input type="text"  [(ngModel)]="first_name" [ngModelOptions]="{standalone: true}"   class="form-control" id="first_name" name="first_name" placeholder="Enter your first name">
+          </div>
+
+           <div class="form-item box-item form-group">
+                  <input type="text"  [(ngModel)]="last_name" [ngModelOptions]="{standalone: true}"   class="form-control" id="last_name" name="last_name" placeholder="Enter your last name">
+          </div>
+
+          <div class="form-item box-item form-group">
+              <input type="text" [(ngModel)]="address" [ngModelOptions]="{standalone: true}" class="form-control" id="studentaddress" name="studentaddress" placeholder="Enter your address">
+          </div>
+
+          <div class="form-item box-item form-group">
+                    <input type="text" [(ngModel)]="phone" [ngModelOptions]="{standalone: true}" class="form-control" id="phone" name="phone" placeholder="Enter your phone">
+          </div>
+
+          <div class="form-item mb-4">
+              <button type="submit" class="btn btn-success submitDashboard" (click)="saveUser()" *ngIf="editingMode===0">Save</button> &nbsp;
+              <button type="submit" class="btn btn-success submitDashboard" (click)="updateUser()" *ngIf="editingMode===1">Update</button>
+          </div>
+
+        </form>
+
+      </main>
+      <button type="button" class="btn btn-primary" routerLink="/users"> <i class="fas fa-plus"></i> Back to user panel </button>
+
+      <i class="wave"></i>
+    </section>
+
+  </div>
+
+ 
