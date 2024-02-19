@@ -47,6 +47,10 @@
  10. python manage.py createsuperuser (enter username, email, password)
 
 ```
+# important commands
+test:
+python manage.py test
+
 # Dont't Forgot Give star and fork
 
 ## Screen Shots
