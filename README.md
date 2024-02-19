@@ -44,11 +44,6 @@ Perform integration tests to verify interaction between the frontend and backend
 frontend and backend components.
 Test edge cases and handle them appropriately.
 
-
-# Technologies chosen
-
-Python, django, Mysql, Javascript, Typescript, Angular, Boostrap, Css, Html, Postman, API REST FULL.
-
 # Customer Management Platform with API REST
 
 Description:
@@ -72,6 +67,6 @@ To perform unit tests in Django, we used the standard TestCase library provided 
 These tests are designed to verify the correct functioning of the different parts of the system in an isolated and automated way.
 Test cases covering various scenarios have been created to ensure the robustness and reliability of the developed code.
 
-Technologies Used: Python, Django, MySQL, JavaScript, TypeScript, Angular, Bootstrap, CSS, HTML, Postman, API REST Full.
+Technologies Used: Python, Django, MySQL, JavaScript, TypeScript, Angular, Bootstrap, CSS, SCSS, HTML, Postman, API REST Full.
 This solution provides a robust and complete platform for client management, offering a seamless and efficient experience for both users and developers.
 
