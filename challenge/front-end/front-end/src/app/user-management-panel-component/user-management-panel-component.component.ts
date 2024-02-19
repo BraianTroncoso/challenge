@@ -22,7 +22,7 @@ export class UserManagementPanelComponentComponent {
   {
 
   }
-  
+
   ngOnInit() {
     // Retrieves user data from the route parameters
     const userData = history.state.data;
@@ -47,6 +47,7 @@ export class UserManagementPanelComponentComponent {
         horizontalPosition: 'center',
         verticalPosition: 'top'
     });
+    this.clearFieldsUser();
     return; // Stop execution if there are missing fields
 }
 

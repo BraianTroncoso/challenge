@@ -13,19 +13,19 @@
         <form>
 
           <div class="form-item box-item form-group">
-            <input type="text"  [(ngModel)]="first_name" [ngModelOptions]="{standalone: true}"   class="form-control" id="first_name" name="first_name" placeholder="Enter your first name">
+            <input type="text"  [(ngModel)]="first_name" [ngModelOptions]="{standalone: true}"   class="form-control form-input" id="first_name" name="first_name" placeholder="Enter your first name" minlength="3" required>
           </div>
 
            <div class="form-item box-item form-group">
-                  <input type="text"  [(ngModel)]="last_name" [ngModelOptions]="{standalone: true}"   class="form-control" id="last_name" name="last_name" placeholder="Enter your last name">
+                  <input type="text"  [(ngModel)]="last_name" [ngModelOptions]="{standalone: true}"   class="form-control form-input" id="last_name" name="last_name" placeholder="Enter your last name" minlength="3" required>
           </div>
 
           <div class="form-item box-item form-group">
-              <input type="text" [(ngModel)]="address" [ngModelOptions]="{standalone: true}" class="form-control" id="address" name="address" placeholder="Enter your address">
+              <input type="text" [(ngModel)]="address" [ngModelOptions]="{standalone: true}" class="form-control form-input" id="address" name="address" placeholder="Enter your address" minlength="5" required>
           </div>
 
           <div class="form-item box-item form-group">
-                    <input type="text" [(ngModel)]="phone" [ngModelOptions]="{standalone: true}" class="form-control" id="phone" name="phone" placeholder="Enter your phone">
+              <input type="text" [(ngModel)]="phone" [ngModelOptions]="{standalone: true}" class="form-control form-input" id="phone" name="phone" placeholder="Enter your phone" minlength="10" maxlength="15" required>
           </div>
 
           <div class="form-item mb-4">
