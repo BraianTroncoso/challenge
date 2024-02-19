@@ -29,9 +29,13 @@
           </div>
 
           <div class="form-item mb-4">
-              <button type="submit" class="btn btn-success submitDashboard" (click)="saveUser()" *ngIf="editingMode===0">Save</button> &nbsp;
-              <button type="submit" class="btn btn-success submitDashboard" (click)="updateUser()" *ngIf="editingMode===1">Update</button>
-          </div>
+            <ng-container *ngIf="editingMode===0; else noEditingMode">
+              <button type="submit" class="btn btn-success submitDashboard" (click)="saveUser()" >Save</button> &nbsp;
+            </ng-container>
+            <ng-template #noEditingMode>
+              <button type="submit" class="btn btn-success submitDashboard" (click)="updateUser()" >Update</button>
+            </ng-template>
+            </div>
 
         </form>
 
