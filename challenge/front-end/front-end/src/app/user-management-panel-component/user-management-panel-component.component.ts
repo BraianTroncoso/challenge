@@ -58,14 +58,17 @@ if (this.first_name.length < 2 || this.last_name.length < 2 || this.address.leng
     horizontalPosition: 'center',
     verticalPosition: 'top'
 });
-        this.first_name = '';
-        this.last_name = '';
-        this.address = '';
-        this.phone  = undefined;
-return; // Stop execution if there are missing fields
+    this.clearFieldsUser();
+    return; // Stop execution if there are missing fields
 }
   }
-
+clearFieldsUser(){
+   // Clear fields after successful saving
+   this.first_name = '';
+   this.last_name = '';
+   this.address = '';
+   this.phone = undefined;
+}
 
   saveUser() {
     this.validations();
@@ -85,10 +88,7 @@ return; // Stop execution if there are missing fields
             verticalPosition: 'top'
         });
         // Clear fields after successful saving
-        this.first_name = '';
-        this.last_name = '';
-        this.address = '';
-        this.phone = undefined;
+        this.clearFieldsUser();
     });
 }
 
@@ -111,10 +111,7 @@ return; // Stop execution if there are missing fields
           verticalPosition: 'top'
         });
 
-        this.first_name = '';
-        this.last_name = '';
-        this.address = '';
-        this.phone  = undefined;
+        this.clearFieldsUser();
         this.router.navigate(['/users'])
     });
   }
