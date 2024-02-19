@@ -2,6 +2,11 @@
 
 Lawgic technical test
 
+# Captures
+![add_users](https://github.com/BraianTroncoso/challenge/assets/95662710/49bde402-6679-48bc-b400-9cb18a93557f)
+![users](https://github.com/BraianTroncoso/challenge/assets/95662710/8b411b36-df61-4d0b-bc5b-b4f0047c9b26)
+
+
 # Requirements
 
 # BackEnd:
@@ -34,3 +39,4 @@ e.g., displaying success/error messages).
 # Technologies
 
 Python, django, Mysql, Javascript, Typescript, Angular, Boostrap, Css, Html. API REST FULL.
+
