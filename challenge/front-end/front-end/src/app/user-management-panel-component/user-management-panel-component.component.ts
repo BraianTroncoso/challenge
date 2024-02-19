@@ -51,6 +51,17 @@ export class UserManagementPanelComponentComponent {
         return; // Stop execution if there are missing fields
     }
 
+    const phoneString = this.phone.toString(); 
+    
+    if (this.first_name.length < 2 || this.last_name.length < 2 || this.address.length < 5 || phoneString.length < 10){
+      this._snackBar.open('The data entered are not valid, please try again', 'Close', {
+        duration: 3000,
+        horizontalPosition: 'center',
+        verticalPosition: 'top'
+    });
+    return; // Stop execution if there are missing fields
+    }
+
     // Create the body of data for the request
     let bodyData = {
         "first_name": this.first_name,
