@@ -41,4 +41,35 @@ class UserApiTestCase(TestCase):
     def test_delete_user(self):
         url = reverse('user_detail', kwargs={'id': self.user.id})
         response = self.client.delete(url)
-        self.assertEqual(response.status_code, status.HTTP_200_OK)  # O podrías usar HTTP_204_NO_CONTENT si esperas eso
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_delete_nonexistent_user(self):
+        non_existent_user_id = 99999  
+        url = reverse('user_detail', kwargs={'id': non_existent_user_id})
+        response = self.client.delete(url)
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
+    def test_update_user_with_invalid_data(self):
+        url = reverse('user_detail', kwargs={'id': self.user.id})
+        invalid_data = {
+            "first_name": "",  
+            "last_name": "Doe",
+            "address": "456 Elm St",
+            "phone": "5559876543"
+        }
+        response = self.client.put(url, invalid_data, format='json')
+        self.assertEqual(response.status_code, status.HTTP_400_BAD_REQUEST)
+
+        
+    # def test_get_specific_user(self):
+    #     url = reverse('user_detail', kwargs={'id': self.user.id})
+    #     response = self.client.get(url)
+    #     self.assertEqual(response.status_code, status.HTTP_200_OK)
+    #     user_data = response.json()  # Obtener el contenido de la respuesta como un diccionario
+    #     self.assertEqual(user_data['first_name'], self.user_data['first_name'])
+
+    # def test_get_nonexistent_user(self):
+    #     non_existent_user_id = 99999  # Un ID que no existe en la base de datos
+    #     url = reverse('user_detail', kwargs={'id': non_existent_user_id})
+    #     response = self.client.get(url)
+    #     self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
