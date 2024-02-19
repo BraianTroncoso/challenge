@@ -1,6 +1,6 @@
 # Challenge
 
-Lawgic technical test
+Technical test
 
 # Captures
 ![add_users](https://github.com/BraianTroncoso/challenge/assets/95662710/49bde402-6679-48bc-b400-9cb18a93557f)
@@ -48,4 +48,19 @@ Test edge cases and handle them appropriately.
 # Technologies chosen
 
 Python, django, Mysql, Javascript, Typescript, Angular, Boostrap, Css, Html, Postman, API REST FULL.
+
+# Customer Management Platform with API REST
+
+Description:
+My project consists of a comprehensive customer management solution designed to provide efficient and versatile management.
+The platform allows users to create and manage multiple clients in an intuitive and effective way.
+
+Main Features:
+Customer creation and management: Users can create and manage multiple customers centrally.
+CRUD functionality via REST API: A REST API has been implemented that allows access to CRUD (Create, Read, Update, Delete) methods for customer management remotely and securely.
+Technologies Used: The system is developed using state-of-the-art technologies, including Python and Django for the backend, Angular for the frontend, and MySQL as a relational database.
+Modern User Interface: The web application is developed in Angular, offering a dynamic and friendly user interface for the end user.
+Tools Integration: Postman has been integrated to facilitate the testing and development of the REST API.
+Technologies Used: Python, Django, MySQL, JavaScript, TypeScript, Angular, Bootstrap, CSS, HTML, Postman, API REST Full.
+This solution provides a robust and complete platform for client management, offering a seamless and efficient experience for both users and developers.
 
