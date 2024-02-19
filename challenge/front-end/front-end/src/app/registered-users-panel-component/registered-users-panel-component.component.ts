@@ -23,7 +23,13 @@ export class RegisteredUsersPanelComponentComponent {
     this.getAllUsers();
 
   }
- 
+  clearFieldsUser(){
+    // Clear fields after successful saving
+    this.first_name = '';
+    this.last_name = '';
+    this.address = '';
+    this.phone = undefined;
+ }
  
   getAllUsers(){
     this.http.get("http://127.0.0.1:8000/user")
@@ -36,7 +42,6 @@ export class RegisteredUsersPanelComponentComponent {
  
  
   setUpdate(data: any){
-   console.log(data);
     if (data) {
    this.first_name = data.first_name;
    this.last_name = data.last_name;
@@ -44,9 +49,8 @@ export class RegisteredUsersPanelComponentComponent {
    this.phone = data.phone;
    this.currentUserId = data.id;
    this.router.navigate(['/add-user'], { state: { data: data } });
-   console.log(data);
   }else {
-    console.log('ERROR AL EDITAR')
+    console.log('ERROR WHILE EDITING')
   }
   }
  
@@ -67,10 +71,7 @@ export class RegisteredUsersPanelComponentComponent {
           verticalPosition: 'top'
         });
 
-        this.first_name = '';
-        this.last_name = '';
-        this.address = '';
-        this.phone  = undefined;
+        this.clearFieldsUser();
     });
   }
 
@@ -88,6 +89,5 @@ export class RegisteredUsersPanelComponentComponent {
     });
  
   }
-
 }
 
