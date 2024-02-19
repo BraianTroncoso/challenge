@@ -36,7 +36,16 @@ backend API endpoints.
 Provide user feedback on successful and failed operations (e.g., displaying success/failure messages).
 e.g., displaying success/error messages).
 
-# Technologies
+# Tests: optional
 
-Python, django, Mysql, Javascript, Typescript, Angular, Boostrap, Css, Html. API REST FULL.
+Write unit tests to ensure correctness of API endpoints.
+backend API endpoints.
+Perform integration tests to verify interaction between the frontend and backend components.
+frontend and backend components.
+Test edge cases and handle them appropriately.
+
+
+# Technologies chosen
+
+Python, django, Mysql, Javascript, Typescript, Angular, Boostrap, Css, Html, Postman, API REST FULL.
 
