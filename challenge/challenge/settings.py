@@ -71,9 +71,9 @@ WSGI_APPLICATION = 'challenge.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django',
-        'USER': 'root',
-        'PASSWORD': 'braianMysql!1',
+        'NAME': 'nameforyourdatabase',
+        'USER': 'youruser',
+        'PASSWORD': 'yourpassword',
         'HOST': 'localhost',
         'PORT': '3306',
     }
