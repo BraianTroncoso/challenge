@@ -60,6 +60,7 @@ Modern User Interface: The web application is developed in Angular, offering a d
 Code Structure and Quality Practices: During the development of the project, the focus was on rigorously following programming best practices, including the "Clean Code" principle.
 This is reflected in the clear and organized structure of the code, as well as in the use of descriptive names for variables and functions.
 Proper modularization of the code ensures long-term maintainability and scalability, while minimizing cyclomatic complexity improves readability and maintainability.
+In addition, HttpClient was employed in the Angular client application to communicate efficiently with the Django backend, contributing to a robust and consistent architecture throughout the system.
 This commitment to code quality demonstrates our dedication to delivering a high-level technical product.
 
 Tools Integration: Postman has been integrated to facilitate the testing and development of the REST API.
