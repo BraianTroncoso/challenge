@@ -63,6 +63,10 @@ Technologies Used: The system is developed using state-of-the-art technologies, 
 Modern User Interface: The web application is developed in Angular, offering a dynamic and friendly user interface for the end user.
 
 Tools Integration: Postman has been integrated to facilitate the testing and development of the REST API.
+To perform unit tests in Django, we used the standard TestCase library provided by the framework itself. 
+These tests are designed to verify the correct functioning of the different parts of the system in an isolated and automated way.
+Test cases covering various scenarios have been created to ensure the robustness and reliability of the developed code.
+
 Technologies Used: Python, Django, MySQL, JavaScript, TypeScript, Angular, Bootstrap, CSS, HTML, Postman, API REST Full.
 This solution provides a robust and complete platform for client management, offering a seamless and efficient experience for both users and developers.
 
