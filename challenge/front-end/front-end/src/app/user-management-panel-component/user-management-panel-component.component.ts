@@ -38,30 +38,37 @@ export class UserManagementPanelComponentComponent {
       console.log('ERROR RECEIVING DATA')
     }
   }
- 
-  saveUser() {
-    // Validate the data before sending the request
-    if (!this.first_name || !this.last_name || !this.address || !this.phone) {
+  validations(){
+  // Validate the data before sending the request
+  if (!this.first_name || !this.last_name || !this.address || !this.phone) {
         
-        this._snackBar.open('Please fill out all fields', 'Close', {
-            duration: 3000,
-            horizontalPosition: 'center',
-            verticalPosition: 'top'
-        });
-        return; // Stop execution if there are missing fields
-    }
-
-    const phoneString = this.phone.toString(); 
-    
-    if (this.first_name.length < 2 || this.last_name.length < 2 || this.address.length < 5 || phoneString.length < 10){
-      this._snackBar.open('The data entered are not valid, please try again', 'Close', {
+    this._snackBar.open('Please fill out all fields', 'Close', {
         duration: 3000,
         horizontalPosition: 'center',
         verticalPosition: 'top'
     });
     return; // Stop execution if there are missing fields
-    }
+}
 
+const phoneString = this.phone.toString(); 
+
+if (this.first_name.length < 2 || this.last_name.length < 2 || this.address.length < 5 || phoneString.length < 10 ){
+  this._snackBar.open('The data entered are not valid, please try again', 'Close', {
+    duration: 3000,
+    horizontalPosition: 'center',
+    verticalPosition: 'top'
+});
+        this.first_name = '';
+        this.last_name = '';
+        this.address = '';
+        this.phone  = undefined;
+return; // Stop execution if there are missing fields
+}
+  }
+
+
+  saveUser() {
+    this.validations();
     // Create the body of data for the request
     let bodyData = {
         "first_name": this.first_name,
@@ -87,6 +94,7 @@ export class UserManagementPanelComponentComponent {
 
   
   updateUser(){
+    this.validations();
     let bodyData = {
       "first_name" : this.first_name,
       "last_name" : this.last_name,
